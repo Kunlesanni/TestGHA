@@ -71,9 +71,5 @@ resource random_password name {
   lower   = true
   number  = true
   special = true
-
-  keepers = {
-    id = value
-  }
 }
 
