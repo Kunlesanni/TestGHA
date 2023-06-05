@@ -70,3 +70,7 @@ resource "random_password" "password" {
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
+
+data "azurerm_resource_group" "example" {
+  name = "rg-dbazu-01033946-Nonprod"
+}
