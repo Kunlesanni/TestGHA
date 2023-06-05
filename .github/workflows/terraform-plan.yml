@@ -4,7 +4,7 @@ on:
   # pull_request:
   push:
     branches:
-    -HashiSample
+    - HashiSample
 
 env:
   TF_CLOUD_ORGANIZATION: "university-college-london"
