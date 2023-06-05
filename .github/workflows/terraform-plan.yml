@@ -46,6 +46,11 @@ jobs:
         with:
           plan: ${{ fromJSON(steps.plan-run.outputs.payload).data.relationships.plan.data.id }}
 
+      - name: Get commit message
+        id: commit
+        run: echo "::set-output name=message::$(git log --format=%B -n 1 ${{ github.event.after }})"
+        if: github.event_name == 'push'
+
       - name: Print commit message
         run: echo "${{ steps.commit.outputs.message }}"
         if: github.event_name == 'push'
