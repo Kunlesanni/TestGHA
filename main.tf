@@ -65,11 +65,8 @@ provider "azurerm" {
   # skip_provider_registration = true
 }
 
-resource random_password name {
-  length  = 10
-  upper   = true
-  lower   = true
-  number  = true
-  special = true
+resource "random_password" "password" {
+  length           = 16
+  special          = true
+  override_special = "!#$%&*()-_=+[]{}<>:?"
 }
-
