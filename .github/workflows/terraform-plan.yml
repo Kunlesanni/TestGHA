@@ -48,11 +48,11 @@ jobs:
 
       - name: Get commit message
         id: commit
-        run: echo "::set-output name=message::$(git log --format=%B -n 1 ${{ github.event.after }})"
+        run: echo "name=message" >> $GITHUB_OUTPUT
         if: github.event_name == 'push'
 
       - name: Print commit message
-        run: echo "${{ steps.commit.outputs.message }}"
+        run: "$GITHUB_OUTPUT"
         if: github.event_name == 'push'
 
       - name: Update PR
