@@ -7,6 +7,12 @@ on:
   pull_request:
     branches:
     - AzSample
+    
+env:
+  TF_CLOUD_ORGANIZATION: "university-college-london"
+  TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
+  TF_WORKSPACE: "TestGHA"
+  CONFIG_DIRECTORY: "./"
 
 #Special permissions required for OIDC authentication
 permissions:
